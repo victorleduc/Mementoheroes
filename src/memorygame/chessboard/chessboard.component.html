@@ -1,1 +1,9 @@
-<card *ngFor="let card of cards$ | async; trackBy:trackByCards" [info]="card" (flipped)="actions.flipCard($event)"></card>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="gameboard">
+                <card *ngFor="let card of cards$ | async; trackBy:trackByCards" [info]="card" (flipped)="actions.flipCard($event)"></card>
+            </div>
+        </div>
+    </div>
+</div>

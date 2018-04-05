@@ -1,9 +1,35 @@
+@media screen and (max-width: 450px) {
+    :host {
+        height: 480px;
+        padding: 10px 0px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    :host {
+        height: 450px;
+    }
+}
+
 :host {
-    margin-top: 20px;
     width: 100%;
-    background-color: #fff;
-    height: 530px;
-    border-radius: 4px;
+    height: 750px;
+    background: rgb(119, 211, 147);
+    margin-top: -200px;
+}
+
+.col-6,
+.playerboard,
+.row {
+    padding: 0 !important;
+}
+
+.gameboard {
+    width: 100%;
+    height: 750px;
+    /* 
+    background: rgb(119, 211, 147); */
+    margin-top: -200px;
     padding: 10px 5px;
     display: flex;
     flex-wrap: wrap;
@@ -11,17 +37,7 @@
     align-items: center;
     align-content: space-around;
 }
+
 card:nth-child(4n) {
     margin-right: 0px;
-}
-@media screen and (max-width: 450px) {
-    :host {
-        height: 480px;
-        padding: 10px 0px;
-    }
-}
-@media screen and (max-width: 370px) {
-    :host {
-        height: 450px;
-    }
 }
