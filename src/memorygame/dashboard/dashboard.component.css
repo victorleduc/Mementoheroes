@@ -6,7 +6,7 @@
 .playerboard {
     width: 100%;
     height: 200px;
-    background: rgb(119, 177, 211);
+    /*  background: rgb(119, 177, 211); */
     margin-top: 10px;
     padding: 3%;
 }
@@ -29,8 +29,6 @@ h1 {
     padding-left: 15px !important;
 }
 
-.lifebar {
-    width: 130px;
-    height: 10%;
+.progress-bar {
     background: red;
 }

@@ -29,8 +29,8 @@ export class CardComponent implements OnInit {
     }
     this.flipped.emit(info)
   }
-
-  ngOnInit() {
+  ngOnInit() { }
+  /* ngOnInit() {
     this.apiService.getHeroes().subscribe(heroes => {
       // console.log(heroes);
       this.heroes = heroes;
@@ -40,5 +40,5 @@ export class CardComponent implements OnInit {
 
     });
 
-  }
+  } */
 }
