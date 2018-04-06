@@ -20,6 +20,7 @@ export class GameActions {
 
   private timerId: any
   private turn = 0
+  private endGame = false
 
   ngOnInit() {
     this.turn = 1;
@@ -69,50 +70,55 @@ export class GameActions {
   }
 
   flipCard(card: ICard): any {
-
-    const state = this.ngRedux.getState()
-    this.updateCardFlipped(card)
-    if (state.status === STATUS.READY) {
-      this.updateStatus(STATUS.PLAYING)
-    }
-    if (isEmpty(state.lastSelectedCard)) {
-      return this.updateLastSelectedCard(card)
-    }
-    if (state.lastSelectedCard.name === card.name) {
-      console.log(this.turn);
-      if (this.turn % 2 === 0) {
-        // console.log('identique: ' + this.turn);
-        alert('Player 2, play !!!');
-        if (this.select.players[0].life > 30) {
-          this.select.players[0].life -= 30;
-        } else {
-          this.select.players[0].life = 0;
-          alert('Player 2 WIN !!!');
-        }
-        // this.turn = this.turn;
-      } else {
-        // console.log('pas bon1: ' + this.turn)
-        alert('Player 1, play !!!');
-        if (this.select.players[1].life > 30) {
-          this.select.players[1].life -= 30;
-        } else {
-          this.select.players[1].life = 0;
-          alert('Player 1 WIN !!!');
-        }
-      }
-      this.updateLastSelectedCard(null)
-      this.match()
-      const remains = +state.remains - 1
-      return remains || this.updateStatus(STATUS.PASS)
+    if (this.select.players[0].life === 0 || this.select.players[1].life === 0) {
+      return;
     } else {
-      // console.log('pas bon2: ' + this.turn);
-      this.turn = this.turn + 1;
-    } // console.log('tamere5');
-    const lastCard = state.lastSelectedCard
-    this.updateLastSelectedCard(null)
-    setTimeout(() => {
-      this.updateCardFlipped(lastCard)
+      const state = this.ngRedux.getState()
       this.updateCardFlipped(card)
-    }, 1000)
+      if (state.status === STATUS.READY) {
+        this.updateStatus(STATUS.PLAYING)
+      }
+      if (isEmpty(state.lastSelectedCard)) {
+        return this.updateLastSelectedCard(card)
+      }
+      if (state.lastSelectedCard.name === card.name) {
+        console.log(this.turn);
+        if (this.turn % 2 === 0) {
+          // console.log('identique: ' + this.turn);
+          alert('Player 2, play !!!');
+          if (this.select.players[0].life > 30) {
+            this.select.players[0].life -= 30;
+          } else {
+            this.select.players[0].life = 0;
+            alert('Player 2 WIN !!!');
+            return;
+          }
+          // this.turn = this.turn;
+        } else {
+          // console.log('pas bon1: ' + this.turn)
+          alert('Player 1, play !!!');
+          if (this.select.players[1].life > 30) {
+            this.select.players[1].life -= 30;
+          } else {
+            this.select.players[1].life = 0;
+            alert('Player 1 WIN !!!');
+            return;
+          }
+        }
+        this.updateLastSelectedCard(null)
+        this.match()
+        const remains = +state.remains - 1
+        return remains || this.updateStatus(STATUS.PASS)
+      } else {
+        // console.log('pas bon2: ' + this.turn);
+        this.turn = this.turn + 1;
+      } // console.log('tamere5');
+      const lastCard = state.lastSelectedCard
+      this.updateLastSelectedCard(null)
+      setTimeout(() => {
+        this.updateCardFlipped(lastCard)
+        this.updateCardFlipped(card)
+      }, 1000)
+    }
   }
 }
