@@ -73,8 +73,8 @@ export class GameActions {
     if (isEmpty(state.lastSelectedCard)) {
       return this.updateLastSelectedCard(card)
     }
-    if (state.lastSelectedCard.name === card.name) {
-      console.log('tamere4');
+    if (state.lastSelectedCard.name === card.name) {/* 
+      console.log('tamere4'); */
       this.select.players[1].life -= 10;
       this.updateLastSelectedCard(null)
       this.match()
