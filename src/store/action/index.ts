@@ -79,20 +79,33 @@ export class GameActions {
       return this.updateLastSelectedCard(card)
     }
     if (state.lastSelectedCard.name === card.name) {
-      // console.log(this.turn);
+      console.log(this.turn);
       if (this.turn % 2 === 0) {
-        console.log(this.turn);
-        this.select.players[0].life -= 10;
-        this.turn = this.turn;
+        // console.log('identique: ' + this.turn);
+        alert('Player 2, play !!!');
+        if (this.select.players[0].life > 30) {
+          this.select.players[0].life -= 30;
+        } else {
+          this.select.players[0].life = 0;
+        }
+        // this.turn = this.turn;
       } else {
-        this.select.players[1].life -= 10;
+        // console.log('pas bon1: ' + this.turn)
+        alert('Player 1, play !!!');
+        if (this.select.players[1].life > 30) {
+          this.select.players[1].life -= 30;
+        } else {
+          this.select.players[1].life = 0;
+        }
       }
-      this.turn = this.turn + 1;
       this.updateLastSelectedCard(null)
       this.match()
       const remains = +state.remains - 1
       return remains || this.updateStatus(STATUS.PASS)
-    } console.log('tamere5');
+    } else {
+      // console.log('pas bon2: ' + this.turn);
+      this.turn = this.turn + 1;
+    } // console.log('tamere5');
     const lastCard = state.lastSelectedCard
     this.updateLastSelectedCard(null)
     setTimeout(() => {
