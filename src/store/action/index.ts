@@ -87,6 +87,7 @@ export class GameActions {
           this.select.players[0].life -= 30;
         } else {
           this.select.players[0].life = 0;
+          alert('Player 2 WIN !!!');
         }
         // this.turn = this.turn;
       } else {
@@ -96,6 +97,7 @@ export class GameActions {
           this.select.players[1].life -= 30;
         } else {
           this.select.players[1].life = 0;
+          alert('Player 1 WIN !!!');
         }
       }
       this.updateLastSelectedCard(null)
