@@ -19,15 +19,10 @@ export class HomepageComponent implements OnInit {
 
     ngOnInit() {
         this.select.players = [];
-        let i = 0;
-        while (i < 10) {
-            this.apiService.getHeroes().subscribe(heroes => {
-                // console.log(heroes);
-                this.heroes = heroes;
-                i++
-            });
-        }
-
+        this.apiService.getHeroes().subscribe(heroes => {
+            // console.log(heroes);
+            this.heroes = heroes;
+        });
     }
     chooseplayer(index) {
         this.select.players[this.nbrPlayer] = this.heroes[index];

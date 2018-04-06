@@ -29,7 +29,8 @@ interface Powerstats {
 export class DashboardComponent implements OnInit {
   @select() remains$: Observable<number>
   @select() highestSpeed$: Observable<number>
-  capacity = '';
+  capacity1Player = '';
+  capacity2Player = '';
 
 
   heroes; // all the heroes
@@ -37,7 +38,8 @@ export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService, private select: SelectService, private router: Router) { }
 
   ngOnInit() {
-    this.capacity = '100%';
+    this.capacity1Player = '100%';
+    this.capacity2Player = '50%';
     console.log(this.select.players);
 
     if (this.select.players.length !== 2) {

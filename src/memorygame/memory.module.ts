@@ -12,7 +12,6 @@ import { InfoComponent } from './dashboard/info.component'
 import { ChessboardComponent } from './chessboard/chessboard.component'
 import { CardComponent } from './chessboard/card.component'
 import { StatusComponent } from './status/status.component'
-import { SelectplayerComponent } from 'app/selectplayer.component'
 import { AppRoutingModule } from 'app/app-routing.module'
 
 import { GameActions } from '../store/action'
@@ -34,7 +33,6 @@ import { SelectService } from './../select.services';
     CardComponent,
     StatusComponent,
     HomepageComponent,
-    SelectplayerComponent,
     AppComponent
   ],
   providers: [GameActions, ApiService, SelectService],
