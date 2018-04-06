@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, OnInit } from '@angular/core'
 import { NgRedux } from '@angular-redux/store'
 
 import { SelectService } from '../../select.services';
@@ -19,6 +19,11 @@ export class GameActions {
   static UPDATE_HIGHESTSPEED = 'UPDATE_HIGHESTSPEED'
 
   private timerId: any
+  private turn = 0
+
+  ngOnInit() {
+    this.turn = 1;
+  }
 
   reset(): void {
     this.ngRedux.dispatch({ type: GameActions.RESET })
@@ -73,14 +78,21 @@ export class GameActions {
     if (isEmpty(state.lastSelectedCard)) {
       return this.updateLastSelectedCard(card)
     }
-    if (state.lastSelectedCard.name === card.name) {/* 
-      console.log('tamere4'); */
-      this.select.players[1].life -= 10;
+    if (state.lastSelectedCard.name === card.name) {
+      // console.log(this.turn);
+      if (this.turn % 2 === 0) {
+        console.log(this.turn);
+        this.select.players[0].life -= 10;
+        this.turn = this.turn;
+      } else {
+        this.select.players[1].life -= 10;
+      }
+      this.turn = this.turn + 1;
       this.updateLastSelectedCard(null)
       this.match()
       const remains = +state.remains - 1
       return remains || this.updateStatus(STATUS.PASS)
-    }
+    } console.log('tamere5');
     const lastCard = state.lastSelectedCard
     this.updateLastSelectedCard(null)
     setTimeout(() => {
