@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core'
 import { NgRedux } from '@angular-redux/store'
 
+import { SelectService } from '../../select.services';
+
 import { isEmpty } from '../../helper/object'
 import { IState, STATUS, ICard } from '../interface'
 
 @Injectable()
 export class GameActions {
-  constructor(private ngRedux: NgRedux<IState>) {}
+  constructor(private ngRedux: NgRedux<IState>, private select: SelectService) { }
 
   static RESET = 'RESET'
   static UPDATE_STATUS = 'UPDATE_STATUS'
@@ -62,6 +64,7 @@ export class GameActions {
   }
 
   flipCard(card: ICard): any {
+
     const state = this.ngRedux.getState()
     this.updateCardFlipped(card)
     if (state.status === STATUS.READY) {
@@ -71,6 +74,8 @@ export class GameActions {
       return this.updateLastSelectedCard(card)
     }
     if (state.lastSelectedCard.name === card.name) {
+      console.log('tamere4');
+      this.select.players[1].life -= 10;
       this.updateLastSelectedCard(null)
       this.match()
       const remains = +state.remains - 1

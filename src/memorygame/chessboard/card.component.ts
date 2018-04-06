@@ -26,6 +26,7 @@ export class CardComponent implements OnInit {
 
   }
   flip(info: ICard) {
+    console.log('tamere1');
     if (info.flipped) {
       return
     }

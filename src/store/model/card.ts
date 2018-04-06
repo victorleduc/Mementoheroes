@@ -16,7 +16,7 @@ const CARD_NAMES = [
 export const CARDS: Array<ICard> = CARD_NAMES.map(n => ({
   name: n,
   flipped: false,
-  url: `${environment.deployUrl}assets/${n}.png`
+  url: `${environment.deployUrl}assets/${n}.jpg`
 }))
 
 const CARDS_WITHOUT_BACK = CARDS.filter(c => c.name !== 'back')
