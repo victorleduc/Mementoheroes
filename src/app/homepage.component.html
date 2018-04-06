@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-xs-1 col-md-2" *ngFor="let hero of heroes ; let i = index">
+            <img (click)="chooseplayer(i)" class="img-fluid" src="{{hero.images.sm}}" alt="{{hero.name}}">{{hero.name}}
+        </div>
+    </div>
+</div>

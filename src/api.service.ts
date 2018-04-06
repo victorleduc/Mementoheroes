@@ -2,6 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+interface Hero {
+  id: string;
+  name: string;
+  images: string;
+}
+/* 
+interface Powerstats {
+  strength: number;
+  durability: number;
+  power: number;
+  combat: number;
+} */
 @Injectable()
 export class ApiService {
 
@@ -10,9 +22,12 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getHeroes() {
-    return this.http.get(this.BASE_URL + 'all.json');
+    return this.http.get<Hero[]>(this.BASE_URL + 'all.json');
   }
-  getHeroesId(id) {
-    return this.http.get(this.BASE_URL + 'id/' + id + '.json');
-  }
+  getHero(id) {
+    return this.http.get<Hero>(this.BASE_URL + 'id/' + id + '.json');
+  }/* 
+  getStrength(strength) {
+    return this.http.get<Powerstats>(this.BASE_URL + 'powerstats/' + strength + '.json');
+  } */
 }

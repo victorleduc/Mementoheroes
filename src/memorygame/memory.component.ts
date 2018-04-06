@@ -9,7 +9,7 @@ import { STATUS } from '../store/interface'
   styleUrls: ['./memory.component.css']
 })
 export class MemoryComponent implements OnInit {
-  constructor(private actions: GameActions) {}
+  constructor(private actions: GameActions) { }
 
   ngOnInit() {
     this.actions.updateStatus(STATUS.READY)

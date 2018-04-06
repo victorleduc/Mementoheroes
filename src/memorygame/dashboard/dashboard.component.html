@@ -4,13 +4,14 @@
             <div class="playerboard">
                 <div class="row">
                     <div class="col-6">
-                        <img src="https://raw.githubusercontent.com/akabab/superhero-api/0.2.0/api/images/sm/731-zoom.jpg" alt="">
+                        <img src="{{select.players[0].images.md}}" alt="">
                     </div>
                     <div class="col-6 padding-0">
-                        <h1>Name</h1>
-                        <p>Durability</p>
-                        <p>Power</p>
-                        <p>Combat</p>
+                        <h1>Name : {{ select.players[0].name }}</h1>
+                        <p>Durability : {{ select.players[0].powerstats.durability }}
+                        </p>
+                        <p>Power : {{ select.players[0].powerstats.power }}</p>
+                        <p>Combat : {{ select.players[0].powerstats.combat }}</p>
                         <div class="progress">
                             <div class="progress-bar" [ngStyle]="{'width': capacity}">{{capacity}}</div>
                         </div>
@@ -22,16 +23,16 @@
             <div class="playerboard">
                 <div class="row">
                     <div class="col-6 padding-0 padding-l-15">
-                        <h1>Name</h1>
-                        <p>Durability</p>
-                        <p>Power</p>
-                        <p>Combat</p>
+                        <h1>Name : {{ select.players[1].name }}</h1>
+                        <p>Durability : {{ select.players[1].powerstats.durability }}</p>
+                        <p>Power : {{ select.players[1].powerstats.power }}</p>
+                        <p>Combat : {{ select.players[1].powerstats.combat }}</p>
                         <div class="progress">
                             <div class="progress-bar" [ngStyle]="{'width': capacity}">{{capacity}}</div>
                         </div>
                     </div>
                     <div class="col-6">
-                        <img src="https://raw.githubusercontent.com/akabab/superhero-api/0.2.0/api/images/sm/731-zoom.jpg" alt="">
+                        <img src="{{select.players[1].images.md}}" alt="">
                     </div>
                 </div>
             </div>
