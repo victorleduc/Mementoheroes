@@ -1,3 +1,4 @@
+import { Router } from '@angular/router'
 import { Injectable, OnInit } from '@angular/core'
 import { NgRedux } from '@angular-redux/store'
 
@@ -8,7 +9,7 @@ import { IState, STATUS, ICard } from '../interface'
 
 @Injectable()
 export class GameActions {
-  constructor(private ngRedux: NgRedux<IState>, private select: SelectService) { }
+  constructor(private ngRedux: NgRedux<IState>, private select: SelectService, private router: Router) { }
 
   static RESET = 'RESET'
   static UPDATE_STATUS = 'UPDATE_STATUS'
@@ -71,7 +72,7 @@ export class GameActions {
 
   flipCard(card: ICard): any {
     if (this.select.players[0].life === 0 || this.select.players[1].life === 0) {
-      return;
+      return this.router.navigate(['/homepage']);
     } else {
       const state = this.ngRedux.getState()
       this.updateCardFlipped(card)
