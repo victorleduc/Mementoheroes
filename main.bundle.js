@@ -1059,8 +1059,6 @@ var STATUS;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CARDS; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = getGameCards;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
-
 var CARD_NAMES = [
     '8-ball',
     'baked-potato',
@@ -1075,7 +1073,7 @@ var CARD_NAMES = [
 var CARDS = CARD_NAMES.map(function (n) { return ({
     name: n,
     flipped: false,
-    url: __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].deployUrl + "assets/" + n + ".jpg"
+    url: "/assets/" + n + ".jpg"
 }); });
 var CARDS_WITHOUT_BACK = CARDS.filter(function (c) { return c.name !== 'back'; });
 function getGameCards() {
