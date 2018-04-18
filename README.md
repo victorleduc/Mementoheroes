@@ -1,4 +1,4 @@
-### Hackathon n°1 ###
+## Hackathon n°1 ##
 
 It's the game we made for our first Hackathon with Arnaud.  ( https://github.com/ArnaudPichot )
 
