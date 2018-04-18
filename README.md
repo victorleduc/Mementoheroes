@@ -4,12 +4,13 @@ It's the game we made for our first Hackathon with Arnaud.  ( https://github.com
 
 Title : Super Heroes Fighters
 
-Subject :   - made a 1vs1 game
-            - possibility to choose our character
-            - lifebar system
-            - turn based game (with KO)
-            - use this API : akabab.github.io/superhero-api/api/
-            - work with some specifications given by the API
+Subject :  
+- made a 1vs1 game
+- possibility to choose our character
+- lifebar system
+- turn based game (with KO)
+- use this API : akabab.github.io/superhero-api/api/
+- work with some specifications given by the API
 
 
 ## Want to try locally? ##
