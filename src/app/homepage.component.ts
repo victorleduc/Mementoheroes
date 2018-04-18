@@ -25,7 +25,11 @@ export class HomepageComponent implements OnInit {
         });
     }
     chooseplayer(index) {
+        // this.select.players[this.nbrPlayer].selected = true;
         this.select.players[this.nbrPlayer] = this.heroes[index];
+        if (document.getElementById('heroCard' + index).style.opacity === '0.5') {
+            return false;
+        }
         this.select.players[this.nbrPlayer].life = 100;
         this.nbrPlayer = this.nbrPlayer + 1;
 
@@ -34,7 +38,8 @@ export class HomepageComponent implements OnInit {
         if (this.select.players.length == 2) {
             this.router.navigate(['/memory']);
         }
-
+        document.getElementById('heroCard' + index).style.opacity = '0.5';
+        document.getElementById('heroCard' + index).style.filter = 'grayscale(100%)';
+        document.getElementById('heroCard' + index).style.border = '15px solid black';
     }
-
 }
