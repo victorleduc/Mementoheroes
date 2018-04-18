@@ -2,11 +2,13 @@
     <div class="row">
         <div class="col-3">
             <div class="playerboard">
-                <div class="row">
-                    <div class="col-6">
+                <div class="row rowimg">
+                    <div class="col-12">
                         <img src="{{select.players[0].images.md}}" alt="">
                     </div>
-                    <div class="col-6 padding-0">
+                </div>
+                <div class="row rowstat-1">
+                    <div class="col-12">
                         <h1>Name : {{ select.players[0].name }}</h1>
                         <p>Durability : {{ select.players[0].powerstats.durability }}
                         </p>
@@ -21,8 +23,13 @@
         </div>
         <div class="offset-6 col-3">
             <div class="playerboard">
-                <div class="row">
-                    <div class="col-6 padding-0 padding-l-15">
+                <div class="row rowimg">
+                    <div class="col-12">
+                        <img src="{{select.players[1].images.md}}" alt="">
+                    </div>
+                </div>
+                <div class="row  rowstat-2">
+                    <div class="col-12">
                         <h1>Name : {{ select.players[1].name }}</h1>
                         <p>Durability : {{ select.players[1].powerstats.durability }}</p>
                         <p>Power : {{ select.players[1].powerstats.power }}</p>
@@ -30,9 +37,6 @@
                         <div class="progress">
                             <div class="progress-bar" [ngStyle]="{'width': select.players[1].life + '%'}">{{select.players[1].life}} %</div>
                         </div>
-                    </div>
-                    <div class="col-6">
-                        <img src="{{select.players[1].images.md}}" alt="">
                     </div>
                 </div>
             </div>

@@ -86,7 +86,7 @@ export class GameActions {
         console.log(this.turn);
         if (this.turn % 2 === 0) {
           // console.log('identique: ' + this.turn);
-          alert('Player 2, play !!!');
+          alert('Player 2, play again !!!');
           if (this.select.players[0].life > 30) {
             this.select.players[0].life -= 30;
           } else {
@@ -97,7 +97,7 @@ export class GameActions {
           // this.turn = this.turn;
         } else {
           // console.log('pas bon1: ' + this.turn)
-          alert('Player 1, play !!!');
+          alert('Player 1, play again!!!');
           if (this.select.players[1].life > 30) {
             this.select.players[1].life -= 30;
           } else {
