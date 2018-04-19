@@ -14,6 +14,8 @@ Subject :
 
 (optimized for 1280:720px screen)
 
+Deploy link : https://ludoviclanchon.github.io/Mementoheroes/
+
 ## Want to try locally? ##
 
 ```bash
