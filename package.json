@@ -5,7 +5,9 @@
     "ng": "ng",
     "ghpages": "sh deploy.sh",
     "start": "ng serve",
-    "dist": "ng build --aot -vendor-chunk --target production --environment prod --deploy-url /angular5-memory-game/ --base-href /angular5-memory-game/",
+
+    "build": "ng build --prod",
+    // "dist": "ng build --aot -vendor-chunk --target production --environment prod --deploy-url /angular5-memory-game/ --base-href /angular5-memory-game/",
     "deploy": "angular-cli-ghpages",
     "lint": "ng lint"
   },
