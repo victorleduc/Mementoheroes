@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
 
   heroes; // all the heroes
   hero; // hero par rapport a son id
-  constructor(private apiService: ApiService, private select: SelectService, private router: Router) { }
+  constructor(private apiService: ApiService, public select: SelectService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.select.players);
