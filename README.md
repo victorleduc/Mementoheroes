@@ -12,6 +12,7 @@ Subject :
 - use this API : akabab.github.io/superhero-api/api/
 - work with some specifications given by the API
 
+(optimized for 1280:720px screen)
 
 ## Want to try locally? ##
 
